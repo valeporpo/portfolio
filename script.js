@@ -33,3 +33,41 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 });
+
+
+function animate({timing, draw, duration}) {
+
+    let start = performance.now();
+  
+    requestAnimationFrame(function animate(time) {
+      // timeFraction goes from 0 to 1
+      let time_fraction = (time - start) / duration;
+      if (time_fraction  > 1) time_fraction  = 1;
+  
+      // calculate the current animation state
+      let progress = timing(time_fraction)
+  
+      draw(progress); // draw it
+  
+      if (time_fraction  < 1) {
+        requestAnimationFrame(animate);
+      }
+  
+    });
+}
+let el = document.querySelector('.outer-figure img');
+document.addEventListener('DOMContentLoaded', function() {
+    animate({
+        duration: 1000,
+        timing(time_fraction) {
+          return Math.sqrt(time_fraction);
+        },
+        draw(progress) {
+            //let el = document.querySelector('.outer-figure img');
+            const new_pos = -(100-100*progress);
+            const new_opacity = progress;
+            el.style.transform = 'translateX('+new_pos+ '%)';
+            el.style.opacity = new_opacity;
+        }
+    });
+});

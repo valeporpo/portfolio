@@ -46,6 +46,8 @@ section#me .cover-up {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            position: relative;
+            overflow: hidden;
         }
         section#me .promo {
             border-radius: 50%;
