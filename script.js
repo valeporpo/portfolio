@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
         iframe.contentWindow.document.onclick = function(ev) {
             const url = ev.target.getAttribute('src');
             console.log(url);
+            const url2 = iframe.getAttribute('src');
+            console.log(url2);
             window.open(url);
         };
     }
