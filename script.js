@@ -22,15 +22,14 @@ function scroll_to_target_section(ev) {
 
 }
 document.addEventListener('DOMContentLoaded', function() {
-    const iframe = document.querySelector('.work iframe');
-
-    iframe.onload = function () {
-        iframe.contentWindow.document.onclick = function(ev) {
-            const url = ev.target.getAttribute('src');
-            console.log(url);
-            const url2 = iframe.getAttribute('src');
-            console.log(url2);
-            window.open(url);
-        };
+    const iframes = document.querySelectorAll('.work iframe');
+    for(const iframe of iframes) {
+        iframe.onload = function () {
+            iframe.contentWindow.document.onclick = function() {
+                const url = iframe.getAttribute('src');
+                window.open(url);
+            };
+        }
     }
+    
 });
