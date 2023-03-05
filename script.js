@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const iframe = document.querySelector('.work iframe');
 
     iframe.onload = function () {
-        iframe.contentWindow.document.onclick = function() {
-            const url = this.getAttribute('src');
+        iframe.contentWindow.document.onclick = function(ev) {
+            const url = ev.target.getAttribute('src');
             window.open(url);
         };
     }
