@@ -23,10 +23,10 @@ function scroll_to_target_section(ev) {
 }
 document.addEventListener('DOMContentLoaded', function() {
     const iframe = document.querySelector('.work iframe');
-    //iframe.onload = function () {
+    iframe.onload = function () {
         console.log("i loaded");
         iframe.contentWindow.document.onclick = function() {
             console.log("cliccccc");
         };
-    //}
+    }
 });
