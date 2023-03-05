@@ -1,8 +1,22 @@
+:root {
+    --main-color: #fce532;
+    --fancy-text-color: #091094;
+}
+
+body {
+    background-color: var(--main-color);
+}
+section h1 {
+    text-transform: uppercase;
+    color: var(--fancy-text-color);
+}
 /* MENU */
 #menu ul {
     display: flex;
     list-style-type: none;
     column-gap: 1rem;
+    margin: 0;
+    padding: 0;
 }
     #menu a {
         text-decoration: none;
@@ -10,9 +24,63 @@
     }
 /* END MENU */
 
+/* SU DI ME */
+section#me .cover-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    section#me .outer-figure {
+        border-radius: 50%;
+        width: 70%;
+        aspect-ratio: 1/1;
+        border: 8px solid red;
+        position: relative;
+    }
+        section#me .inner-figure {
+            border-radius: 50%;
+            width: calc(100% - 6px);
+            aspect-ratio: 1/1;
+            border: 3px solid white;
+            background-image: url('assets/img/book-cover-main-img.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        section#me .promo {
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 100px;
+            width: 100px;
+            background-color: #b3ab20;
+            border: 1px solid black;
+        }
+
+/* END SU DI ME */
+
+
 /* PROGETTI */
 #works .work {
     display: flex;
     justify-content: center;
 }
 /* END PROGETTI */
+
+/* FOOTER */
+  footer > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+/* END FOOTER */
