@@ -1,26 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Condensed&family=Prata&display=swap');
+
 :root {
     --main-color: #fce532;
-    --fancy-text-color: #091094;
+    --fancy-text-color: #19325c;
+    --secondary-color: #ed3b13;
 }
 
-body {
+html, body {
     background-color: var(--main-color);
+    margin: 0;
+    padding: 0;
+}
+section {
+    position: relative;
 }
 section h1 {
     text-transform: uppercase;
     color: var(--fancy-text-color);
+    font-size: 36pt;
+    -webkit-text-stroke: 1pt black;
+    font-family: 'Prata', serif;
+}
+main {
+    margin-top: var(--menu-height);
 }
 /* MENU */
+#menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    z-index: 1;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    font-weight: 600;
+    font-family: 'Cabin Condensed', sans-serif;
+    
+}
 #menu ul {
     display: flex;
     list-style-type: none;
     column-gap: 1rem;
-    margin: 0;
     padding: 0;
 }
     #menu a {
         text-decoration: none;
-        color: black;
+        color: white;
+        text-transform: uppercase;
     }
 /* END MENU */
 
@@ -34,7 +61,7 @@ section#me .cover-up {
         border-radius: 50%;
         width: 70%;
         aspect-ratio: 1/1;
-        border: 8px solid red;
+        border: 8px solid var(--secondary-color);
         position: relative;
     }
         section#me .inner-figure {

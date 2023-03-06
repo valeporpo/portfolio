@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', update_dynamic_css_vars);
 window.addEventListener('resize', update_dynamic_css_vars);
 
 function update_dynamic_css_vars() {
-    document.getElementById('dynamic-css-vars').innerHTML = ':root {--menu-height: ' + document.getElementById('menu').offsetHeight + 'px;}';
+    const menu = document.getElementById('menu');
+    const menu_height = menu.offsetHeight;
+    document.getElementById('dynamic-css-vars').innerHTML = ':root {--menu-height: ' + menu_height + 'px;}';
 }
 
 /* Smooth scroll */
